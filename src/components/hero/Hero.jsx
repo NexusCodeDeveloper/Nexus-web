@@ -41,7 +41,7 @@ const Hero = ({ loadingComplete }) => {
             {/* CTA solitario */}
             <AnimateOnView delay={4}>
               <a 
-                href="https://wa.me/5491122334455?text=Hola%20NexusCode%2C%20quiero%20cotizar%20mi%20proyecto"
+                href="https://wa.me/5493813905024?text=Hola%20NexusCode%2C%20quiero%20cotizar%20mi%20proyecto"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group w-full sm:w-auto justify-center inline-flex items-center gap-3 bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-semibold transition-all duration-300 hover:bg-cyan-500 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_35px_rgba(6,182,212,0.5)] transform hover:-translate-y-1 mt-6 sm:mt-10"

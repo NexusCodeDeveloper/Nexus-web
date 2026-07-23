@@ -86,7 +86,7 @@ const Navbar = () => {
               <div onClick={() => handleNav('metodologia')} className={mobileLinkClass}>Metodología</div>
               <div onClick={() => handleNav('nosotros')} className={mobileLinkClass}>Nosotros</div>
               <a
-                href="https://wa.me/5491122334455?text=Hola%20NexusCode%2C%20quiero%20cotizar%20mi%20proyecto"
+                href="https://wa.me/5493813905024?text=Hola%20NexusCode%2C%20quiero%20cotizar%20mi%20proyecto"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-black px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors mt-2"
