@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useRef, useEffect, useState } from 'react'
 
+const scrollTo = (id) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const brandRef = useRef(null)
@@ -48,9 +52,9 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-6">Navegación</h4>
             <ul className="space-y-3">
               <li><Link to="/" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Inicio</Link></li>
-              <li><a href="#servicios" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Servicios</a></li>
-              <li><a href="#metodologia" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Metodología</a></li>
-              <li><a href="#nosotros" className="text-gray-300 hover:text-cyan-400 transition-colors text-sm">Nosotros</a></li>
+              <li><span onClick={() => scrollTo('servicios')} className="text-gray-300 hover:text-cyan-400 transition-colors text-sm cursor-pointer">Servicios</span></li>
+              <li><span onClick={() => scrollTo('metodologia')} className="text-gray-300 hover:text-cyan-400 transition-colors text-sm cursor-pointer">Metodología</span></li>
+              <li><span onClick={() => scrollTo('nosotros')} className="text-gray-300 hover:text-cyan-400 transition-colors text-sm cursor-pointer">Nosotros</span></li>
             </ul>
           </div>
 
