@@ -44,7 +44,7 @@ const Navbar = () => {
 
           <div className="hidden sm:flex items-center gap-2">
             <a
-              href="https://wa.me/5491122334455?text=Hola%20NexusCode%2C%20quiero%20cotizar%20mi%20proyecto"
+              href="https://wa.me/5493813905024?text=Hola%20NexusCode%2C%20quiero%20cotizar%20mi%20proyecto"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-indigo-500 text-white px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors shrink-0 whitespace-nowrap"
