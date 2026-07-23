@@ -36,10 +36,10 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-6 lg:gap-8 px-4">
-            <div onClick={() => scrollTo('inicio')} className={linkClass}>Inicio</div>
-            <div onClick={() => scrollTo('servicios')} className={linkClass}>Servicios</div>
-            <div onClick={() => scrollTo('metodologia')} className={linkClass}>Metodología</div>
-            <div onClick={() => scrollTo('nosotros')} className={linkClass}>Nosotros</div>
+            <div onClick={() => scrollTo('inicio')} className={linkClass}>INICIO</div>
+            <div onClick={() => scrollTo('servicios')} className={linkClass}>SERVICIOS</div>
+            <div onClick={() => scrollTo('metodologia')} className={linkClass}>METODOLOGÍA</div>
+            <div onClick={() => scrollTo('nosotros')} className={linkClass}>NOSOTROS</div>
           </div>
 
           <div className="hidden sm:flex items-center gap-2">
@@ -49,7 +49,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="bg-indigo-500 text-white px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors shrink-0 whitespace-nowrap"
             >
-              Trabaja con nosotros
+              TRABAJA CON NOSOTROS
             </a>
           </div>
 
