@@ -1,4 +1,4 @@
-const PHONE = "5493813905024"
+const PHONE = "5493816456245"
 const MESSAGE = "Hola NexusCode, quiero cotizar mi proyecto"
 
 const WhatsAppButton = () => {
