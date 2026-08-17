@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <>
       <div className="fixed top-4 sm:top-6 md:top-8 left-0 w-full z-50 flex justify-center px-3 sm:px-4 animate-[slide-down_0.6s_ease-out]">
-        <nav className="w-full max-w-3xl bg-[#1a1a1a] px-3 sm:px-4 py-2 rounded-full flex items-center justify-between shadow-2xl border border-gray-800 gap-2 animate-[border-glow_4s_ease-in-out_infinite]">
+        <nav className="w-full max-w-4xl xl:max-w-5xl bg-[#1a1a1a] px-3 sm:px-4 py-2 rounded-full flex items-center justify-between shadow-2xl border border-gray-800 gap-2 animate-[border-glow_4s_ease-in-out_infinite]">
 
           <div
             onClick={() => scrollTo('inicio')}
@@ -35,9 +35,10 @@ const Navbar = () => {
             <img key={flipKey} src={logo} alt="NexusCode" className="w-full h-full object-contain animate-[flip-x_1s_ease-in-out]" />
           </div>
 
-          <div className="hidden md:flex items-center gap-6 lg:gap-8 px-4">
+          <div className="hidden md:flex items-center gap-5 lg:gap-7 px-4">
             <div onClick={() => scrollTo('inicio')} className={linkClass}>INICIO</div>
             <div onClick={() => scrollTo('servicios')} className={linkClass}>SERVICIOS</div>
+            <div onClick={() => scrollTo('proyectos')} className={linkClass}>PROYECTOS</div>
             <div onClick={() => scrollTo('metodologia')} className={linkClass}>METODOLOGÍA</div>
             <div onClick={() => scrollTo('nosotros')} className={linkClass}>NOSOTROS</div>
           </div>
@@ -47,7 +48,7 @@ const Navbar = () => {
               href="https://wa.me/5493816456245?text=Hola%20NexusCode%2C%20quiero%20cotizar%20mi%20proyecto"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-indigo-500 text-white px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors shrink-0 whitespace-nowrap"
+              className="bg-indigo-500 text-white px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-indigo-400 transition-colors shrink-0 whitespace-nowrap"
             >
               TRABAJA CON NOSOTROS
             </a>
@@ -83,6 +84,7 @@ const Navbar = () => {
             <nav className="bg-[#1a1a1a] rounded-2xl shadow-2xl border border-gray-800 p-6 flex flex-col items-center gap-5">
               <div onClick={() => handleNav('inicio')} className={mobileLinkClass}>Inicio</div>
               <div onClick={() => handleNav('servicios')} className={mobileLinkClass}>Servicios</div>
+              <div onClick={() => handleNav('proyectos')} className={mobileLinkClass}>Proyectos</div>
               <div onClick={() => handleNav('metodologia')} className={mobileLinkClass}>Metodología</div>
               <div onClick={() => handleNav('nosotros')} className={mobileLinkClass}>Nosotros</div>
               <a
