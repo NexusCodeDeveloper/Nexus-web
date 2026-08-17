@@ -1,6 +1,6 @@
 import AnimateOnView from '../AnimateOnView'
 
-const PHONE = "5493813905024"
+const PHONE = "5493816456245"
 
 const ServicesSection = () => {
   // Estructura de datos categorizada para las dos columnas principales
