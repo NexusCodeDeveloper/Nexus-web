@@ -1,7 +1,7 @@
-import React from 'react'
 import Navbar from '../components/navbar/Navbar'
 import Hero from '../components/hero/Hero'
 import Service from '../components/services/Service'
+import ProjectsSection from '../components/projectsSection/ProjectsSection'
 import ProcessSection from '../components/processSection/ProcessSection'
 import AboutSection from '../components/aboutSection/AboutSection'
 import Footer from '../components/footer/Footer'
@@ -13,6 +13,7 @@ const Home = ({ loadingComplete }) => {
         <Navbar/>
         <Hero loadingComplete={loadingComplete}/>
         <Service/>
+        <ProjectsSection/>
         <ProcessSection/>
         <AboutSection/>
         <Footer/>
