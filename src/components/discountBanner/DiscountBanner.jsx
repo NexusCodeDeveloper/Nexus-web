@@ -10,7 +10,7 @@ const DiscountBanner = () => {
 
   return (
     <div
-      className="w-full text-white overflow-hidden"
+      className="hidden md:block w-full text-white overflow-hidden"
       style={{
         background: 'linear-gradient(120deg, #06b6d4 0%, #3b82f6 30%, #4f46e5 55%, #06b6d4 85%, #3b82f6 100%)',
         backgroundSize: '300% 300%',
