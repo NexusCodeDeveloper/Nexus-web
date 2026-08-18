@@ -1,15 +1,17 @@
+import { useState } from 'react'
 import AnimateOnView from '../AnimateOnView'
 
 const ProjectsSection = () => {
+  const [modalProject, setModalProject] = useState(null)
   // TODO: completar con tus proyectos reales (nombre, descripción, badge y link)
   const projects = [
     {
       id: 1,
       name: "Bossa Nova - Indumentaria",
-      description: "Sistema de stock diseñado para optimizar la gestión diaria del negocio: control de inventario, cierres de caja por turno, emisión de tickets y administración de usuarios con permisos personalizados.",
-      badge: "Sistema de Stock",
+      description: "Demo del sistema de stock diseñado para optimizar la gestión diaria del negocio: control de inventario, cierres de caja por turno, emisión de tickets y administración de usuarios con permisos personalizados. Se muestra una demo, ya que el sistema real es interno y no está expuesto públicamente.",
+      badge: "Sistema de Stock - Demo",
       location: "Concepción - Tucumán",
-      link: "#"
+      link: "https://nexusstock-z5cy.onrender.com/"
     },
     {
       id: 2,
@@ -75,17 +77,30 @@ const ProjectsSection = () => {
             </p>
 
             <div className="mt-auto">
-              <a
-                href={project.link}
-                target={project.link !== '#' ? '_blank' : undefined}
-                rel={project.link !== '#' ? 'noopener noreferrer' : undefined}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/40 text-cyan-300 text-sm font-semibold hover:bg-cyan-500/20 hover:text-cyan-100 transition-colors"
-              >
-                Ver proyecto
-                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
+              {project.link !== '#' ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/40 text-cyan-300 text-sm font-semibold hover:bg-cyan-500/20 hover:text-cyan-100 transition-colors"
+                >
+                  Ver proyecto
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setModalProject(project)}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/40 text-cyan-300 text-sm font-semibold hover:bg-cyan-500/20 hover:text-cyan-100 transition-colors"
+                >
+                  Ver proyecto
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -150,6 +165,48 @@ const ProjectsSection = () => {
         </div>
 
       </div>
+
+      {modalProject && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          onClick={() => setModalProject(null)}
+        >
+          <div
+            className="relative w-full max-w-md bg-[#0f0f11] border border-cyan-500/30 rounded-3xl p-8 text-center shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setModalProject(null)}
+              className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-[#1a1a1c] border border-gray-800 text-gray-400 hover:text-white hover:border-gray-600 transition-colors"
+              aria-label="Cerrar"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div className="w-14 h-14 mx-auto mb-5 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center">
+              <svg className="w-7 h-7 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+            </div>
+
+            <h3 className="text-2xl font-bold text-white mb-2">Proyecto en edición</h3>
+            <p className="text-gray-300 text-sm leading-relaxed mb-6">
+              El proyecto <span className="text-cyan-300 font-semibold">{modalProject.name}</span> todavía está en desarrollo. Pronto podrás verlo aquí.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setModalProject(null)}
+              className="inline-flex items-center justify-center w-full px-5 py-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/40 text-cyan-300 text-sm font-semibold hover:bg-cyan-500/20 hover:text-cyan-100 transition-colors"
+            >
+              Entendido
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
