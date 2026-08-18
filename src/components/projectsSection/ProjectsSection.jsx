@@ -24,7 +24,7 @@ const ProjectsSection = () => {
     {
       id: 3,
       name: "Trebol - Carrocería",
-      description: "Página que muestra el negocio de acoplados con su catálogo de productos, pensada para que los clientes vean la oferta y se contacten fácilmente.",
+      description: "Web institucional, diseñada para exponer catálogo de acoplados con información clara y organizada, ofreciendo a los clientes un canal de contacto directo para consultas y asesoramiento.",
       badge: "Web Personalizada",
       location: "Salta - San Lorenzo",
       link: "#"
