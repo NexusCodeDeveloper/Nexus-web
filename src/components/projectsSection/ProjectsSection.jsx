@@ -3,7 +3,7 @@ import AnimateOnView from '../AnimateOnView'
 const ProjectsSection = () => {
   // TODO: completar con tus proyectos reales (nombre, descripción, badge y link)
   const projects = [
-{
+    {
       id: 1,
       name: "Bossa Nova - Indumentaria",
       description: "Sistema de stock diseñado para optimizar la gestión diaria del negocio: control de inventario, cierres de caja por turno, emisión de tickets y administración de usuarios con permisos personalizados.",
@@ -17,7 +17,7 @@ const ProjectsSection = () => {
       description: "Página institucional que posiciona a la constructora y desarrolladora, mostrando su catálogo de propiedades en venta para que cada cliente encuentre su próximo hogar",
       badge: "Web institucional",
       location: "Salta",
-      link: "#"
+      link: "https://molca.netlify.app/"
     },
     {
       id: 3,
@@ -43,12 +43,7 @@ const ProjectsSection = () => {
     const isFeatured = project.id === featured.id
     return (
       <AnimateOnView key={project.id} delay={index + 1} className={`flex ${wrapperClassName}`}>
-        <a
-          href={project.link}
-          target={project.link !== '#' ? '_blank' : undefined}
-          rel={project.link !== '#' ? 'noopener noreferrer' : undefined}
-          className="group relative bg-[#0f0f11] rounded-3xl p-6 sm:p-8 border border-gray-800/80 hover:border-cyan-500/40 transition-all duration-300 overflow-hidden flex flex-col h-full w-full hover:-translate-y-2"
-        >
+        <div className="group relative bg-[#0f0f11] rounded-3xl p-6 sm:p-8 border border-gray-800/80 hover:border-cyan-500/40 transition-all duration-300 overflow-hidden flex flex-col h-full w-full hover:-translate-y-2">
           {/* Glow de gradiente en hover */}
           <div className="absolute top-0 right-0 w-56 h-56 bg-gradient-to-br from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-10 rounded-full blur-[70px] transition-opacity duration-500 pointer-events-none"></div>
 
@@ -79,14 +74,21 @@ const ProjectsSection = () => {
               {project.description}
             </p>
 
-            <div className="mt-auto flex items-center gap-2 text-gray-500 group-hover:text-cyan-400 transition-colors">
-              <span className="text-sm font-medium">Ver proyecto</span>
-              <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
+            <div className="mt-auto">
+              <a
+                href={project.link}
+                target={project.link !== '#' ? '_blank' : undefined}
+                rel={project.link !== '#' ? 'noopener noreferrer' : undefined}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/40 text-cyan-300 text-sm font-semibold hover:bg-cyan-500/20 hover:text-cyan-100 transition-colors"
+              >
+                Ver proyecto
+                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
             </div>
           </div>
-        </a>
+        </div>
       </AnimateOnView>
     )
   }

@@ -9,6 +9,15 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [flipKey, setFlipKey] = useState(0)
 
+  const tickerMessage = (
+    <>
+      Obtené un 15% de descuento en tu proyecto viniendo desde la página
+      <svg className="w-3 h-3 mx-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3l4 9L5 21l14-9L5 3z" />
+      </svg>
+    </>
+  )
+
   useEffect(() => {
     const interval = setInterval(() => setFlipKey(k => k + 1), 3000)
     return () => clearInterval(interval)
@@ -33,6 +42,19 @@ const Navbar = () => {
             aria-label="Inicio"
           >
             <img key={flipKey} src={logo} alt="NexusCode" className="w-full h-full object-contain animate-[flip-x_1s_ease-in-out]" />
+          </div>
+
+          <div className="md:hidden flex-1 min-w-0 overflow-hidden text-cyan-300">
+            <div className="flex whitespace-nowrap items-center animate-[marquee_18s_linear_infinite]">
+              <div className="flex items-center shrink-0 py-1 text-[10px] sm:text-xs font-semibold tracking-wide uppercase">
+                {tickerMessage}
+                {tickerMessage}
+              </div>
+              <div className="flex items-center shrink-0 py-1 text-[10px] sm:text-xs font-semibold tracking-wide uppercase">
+                {tickerMessage}
+                {tickerMessage}
+              </div>
+            </div>
           </div>
 
           <div className="hidden md:flex items-center gap-5 lg:gap-7 px-4">
